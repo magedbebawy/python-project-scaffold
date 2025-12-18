@@ -1,0 +1,12 @@
+steps:
+  - name: "python:3.12"
+    id: "test-py312"
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        python --version
+        pip install -U pip
+        make install
+        make lint
+        make test
